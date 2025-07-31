@@ -1,0 +1,54 @@
+select * from tnbc
+
+INSERT INTO tnbc.student
+(idstudent, studentname, dob)
+VALUES(1, 'Jack',  '2008-7-04');
+
+INSERT INTO tnbc.student
+(idstudent, studentname, dob)
+VALUES(2, 'John',  '2008-7-04');
+
+delete from  tnbc.student where idstudent =1
+
+update tnbc.student 
+set studentname='Jack'
+where idstudent =1
+
+
+DELETE FROM tnbc.clinical_patient_brca 
+WHERE bcr_patient_uuid in ('bcr_patient_uuid', 'CDE_ID:');
+
+
+select count(0) from tnbc.clinical_patient_brca 
+
+select er_status_by_ihc, pr_status_by_ihc, her2_status_by_ihc 
+from tnbc.clinical_patient_brca WHERE ajcc_metastasis_pathologic_pm = 'M1';
+
+select ajcc_metastasis_pathologic_pm, er_status_by_ihc, pr_status_by_ihc, her2_status_by_ihc, count(0)
+from tnbc.clinical_patient_brca  group by ajcc_metastasis_pathologic_pm, er_status_by_ihc, pr_status_by_ihc, her2_status_by_ihc 
+order by 1,2,3,4;
+
+DELETE FROM tnbc.case_file_id
+
+select p.bcr_patient_uuid, p.patient_id, f.id, f.file_id, f.bcr_patient_uuid  from tnbc.clinical_patient_brca  p left join 
+			  tnbc.case_file_id f on p.bcr_patient_uuid  = f.bcr_patient_uuid
+
+
+select p.bcr_patient_uuid, p.patient_id,f.file_id, 
+	   p.ajcc_metastasis_pathologic_pm, p.er_status_by_ihc, p.pr_status_by_ihc, p.her2_status_by_ihc
+from tnbc.clinical_patient_brca  p left join 
+			  tnbc.case_file_id f 
+			  on p.bcr_patient_uuid  = f.bcr_patient_uuid
+			  where f.file_id is null 
+			  order by p.ajcc_metastasis_pathologic_pm, p.er_status_by_ihc, p.pr_status_by_ihc, p.her2_status_by_ihc
+			  
+			  
+select * from tnbc.clinical_patient_brca where bcr_patient_uuid='55262FCB-1B01-4480-B322-36570430C917'
+
+select * from  tnbc.case_file_id
+
+select bcr_patient_uuid, count(0) from  tnbc.case_file_id
+   group by bcr_patient_uuid
+   having count(0)>1 order by 2 desc 
+
+c1d311df-f8db-41a4-8091-26c6511830e3
