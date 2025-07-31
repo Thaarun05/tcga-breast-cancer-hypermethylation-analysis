@@ -1,3 +1,6 @@
+/* Practice SQL queries */
+
+
 select * from tnbc
 
 INSERT INTO tnbc.student
