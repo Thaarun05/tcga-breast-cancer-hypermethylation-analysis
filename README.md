@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Research Paper]([url](https://docs.google.com/document/d/1946EeG09cPgDRlKi_8D6Ld2tORhn3289/edit?usp=sharing&ouid=100564994122883841903&rtpof=true&sd=true))
+**Research Paper**: [Download / View Full Paper](https://docs.google.com/document/d/1946EeG09cPgDRlKi_8D6Ld2tORhn3289/edit?usp=sharing&ouid=100564994122883841903&rtpof=true&sd=true) 
 
 This project investigates **DNA hypermethylation patterns** in **metastatic breast cancer**, focusing on **Triple-Negative Breast Cancer (TNBC)** patients using data from **The Cancer Genome Atlas (TCGA)**. It combines epigenetic profiling, data mining, and machine learning to identify CpG sites that are differentially methylated in metastatic tumors and uses those to build a predictive model for metastatic status.
 
